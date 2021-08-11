@@ -5,7 +5,7 @@ const { errors } = require('celebrate');
 const helmet = require('helmet');
 const cors = require('cors');
 
-const { MONGO_DB_PATH, PORT } = require('./config');
+const { MONGO_DB_PATH, PORT } = require('config');
 
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 const limiter = require('./middlewares/limiter');

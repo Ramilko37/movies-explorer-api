@@ -3,17 +3,17 @@ const router = require('express').Router();
 const usersRouter = require('./users');
 const moviesRouter = require('./movies');
 
-const { createUser, login } = require('../../../Downloads/movies-explorer-api-level-1/controllers/users');
-const auth = require('../../../Downloads/movies-explorer-api-level-1/middlewares/auth');
+const { createUser, login } = require('../controllers/users');
+const auth = require('../middlewares/auth');
 
 const NotFoundError = require('../errors/NotFoundError');
 
-const { CRASH_TEST_MSG, NOT_FOUND_ERROR_MSG } = require('../../../Downloads/movies-explorer-api-level-1/utils/constants');
+const { CRASH_TEST_MSG, NOT_FOUND_ERROR_MSG } = require('../utils/constants');
 
 const {
   registrValidation,
   loginValidation,
-} = require('../../../Downloads/movies-explorer-api-level-1/middlewares/validationCheck');
+} = require('../middlewares/validationCheck');
 
 router.get('/crash-test', () => {
   setTimeout(() => {
